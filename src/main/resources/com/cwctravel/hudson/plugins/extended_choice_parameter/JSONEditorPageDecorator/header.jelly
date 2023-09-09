@@ -27,4 +27,6 @@
     href="${resURL}/plugin/extended-choice-parameter/css/selectize.bootstrap2.css"></link>
   <link rel='stylesheet' id='theme_stylesheet'></link>
   <link rel='stylesheet' id='icon_stylesheet'></link>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
 </j:jelly>

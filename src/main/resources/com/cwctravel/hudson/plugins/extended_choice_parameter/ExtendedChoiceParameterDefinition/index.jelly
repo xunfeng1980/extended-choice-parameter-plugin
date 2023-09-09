@@ -30,7 +30,7 @@
             <div name="parameter" description="${it.description}">
               <input type="hidden" name="name" value="${it.name}"/>
               <j:if test="${type eq 'PT_SINGLE_SELECT'}">
-                <select name="value">
+                <select name="value" class="basic-single-select">
                   <st:include page="selectContent.jelly"/>
                 </select>
               </j:if>
@@ -63,4 +63,20 @@
       </j:choose>
     </j:otherwise>
   </j:choose>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        var eles = document.getElementsByClassName('basic-single-select');
+        var i = 0;
+        var cs = [];
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const allBranch = urlParams.get('all_branch')
+        while(i !== eles.length) {
+          cs[i] = new Choices(eles[i],{searchResultLimit: 10});
+          console.log(allBranch);
+          if(allBranch) { cs[i].setChoiceByValue(allBranch) }
+          i++;
+        }
+      });
+    </script>
 </j:jelly>

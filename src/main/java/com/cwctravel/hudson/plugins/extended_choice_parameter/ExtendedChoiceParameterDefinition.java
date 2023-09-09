@@ -619,7 +619,7 @@ public class ExtendedChoiceParameterDefinition extends ParameterDefinition {
         property.setProject(project);
         property.setFile(propertyFile);
         property.execute();
-        return project.getProperty(propertyKey);
+        return new String(project.getProperty(propertyKey).getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
       } catch (Exception e) {
         LOGGER.log(Level.SEVERE, e.getMessage(), e);
       }
